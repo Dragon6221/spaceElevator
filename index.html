@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Elevator Control Panel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Space Elevator Control Panel</h1>
+    
+    <div class="grid">
+      <!-- Elevator Position Visualization -->
+      <div class="panel">
+        <h2>Elevator Position</h2>
+        <div class="elevator-visualization">
+          <div class="elevator-shaft">
+            <div id="elevator-car"></div>
+          </div>
+          <div class="altitude-markers">
+            <span>Space (36,000 km)</span>
+            <span>Stratosphere</span>
+            <span>Troposphere</span>
+            <span>Ground</span>
+          </div>
+        </div>
+        <div class="stats">
+          <p>Current Altitude: <span id="current-altitude">0</span> km</p>
+          <p>Current Speed: <span id="current-speed">0</span> km/h</p>
+        </div>
+      </div>
+
+      <!-- Speed Control -->
+      <div class="panel">
+        <h2>Speed Control</h2>
+        <div class="speed-control">
+          <label for="speed-slider">Elevator Speed (km/h):</label>
+          <input type="range" id="speed-slider" min="0" max="1000" value="200">
+          <span id="speed-value">200</span>
+        </div>
+        <button id="emergency-stop" class="emergency">EMERGENCY STOP</button>
+      </div>
+
+      <!-- Camera Feed -->
+      <div class="panel">
+        <h2>Security Camera Feed</h2>
+        <div class="camera-feed">
+          <svg id="camera-view" viewBox="0 0 400 300"></svg>
+          <div class="passenger-list">
+            <h3>Current Passengers:</h3>
+            <ul id="passengers"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Status -->
+      <div class="panel">
+        <h2>System Status</h2>
+        <div class="status-grid">
+          <div class="status-item">
+            <h3>Power Systems</h3>
+            <div class="progress-bar">
+              <div id="power-level" class="progress"></div>
+            </div>
+            <span id="power-percentage">100%</span>
+          </div>
+          <div class="status-item">
+            <h3>Structure Integrity</h3>
+            <div class="progress-bar">
+              <div id="integrity-level" class="progress"></div>
+            </div>
+            <span id="integrity-percentage">98%</span>
+          </div>
+          <div class="status-item">
+            <h3>Communication Signal</h3>
+            <div class="progress-bar">
+              <div id="signal-level" class="progress"></div>
+            </div>
+            <span id="signal-percentage">95%</span>
+          </div>
+        </div>
+        <div class="alerts" id="alerts"></div>
+      </div>
+
+      <!-- Price Control -->
+      <div class="panel">
+        <h2>Pricing Management</h2>
+        <div class="pricing-controls">
+          <div class="price-input">
+            <label for="base-price">Base Ticket Price ($):</label>
+            <input type="number" id="base-price" value="10000" min="0">
+          </div>
+          <div class="price-input">
+            <label for="premium-markup">Premium Markup (%):</label>
+            <input type="number" id="premium-markup" value="50" min="0">
+          </div>
+          <button id="update-pricing">Update Pricing</button>
+        </div>
+        <div class="current-rates">
+          <p>Standard Ticket: $<span id="standard-rate">10000</span></p>
+          <p>Premium Ticket: $<span id="premium-rate">15000</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
